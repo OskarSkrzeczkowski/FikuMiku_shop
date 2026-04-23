@@ -1,11 +1,13 @@
-import { HeaderTop } from './components/header'
 import { HeroBanner } from './components/hero';
+import { Categories, Bestsellers } from './components/sections';
 
+/*Komponent sekcji głównych na stronie głównej sklepu*/
 export default function Home() {
     return(
         <div>
-        <HeaderTop/>
-        <HeroBanner/>
+                <HeroBanner/>
+                <Categories />
+                <Bestsellers />
         </div>
     );
 }

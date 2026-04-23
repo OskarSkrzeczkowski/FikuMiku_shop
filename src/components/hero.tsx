@@ -1,3 +1,4 @@
+/*Komponent powitalny, reklamowy*/
 export const HeroBanner = () => {
     return (
         <section className="relative bg-blue-300 overflow-hidden">
@@ -45,7 +46,7 @@ export const HeroBanner = () => {
                         <img src="src/assets/photo4.jpg" alt="Klocki magnetyczne" className="w-full h-full object-cover scale-110" />
                     </div>
                     <div className="absolute bottom-8 right-2 bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
-                        Inteligentne klocki: 39.99
+                        Drewniane klocki: 39.99
                     </div>
                 </div>
             </div>

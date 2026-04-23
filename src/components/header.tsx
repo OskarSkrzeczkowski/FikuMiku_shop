@@ -6,7 +6,7 @@ const NAV_LINKS = [
     { name: 'Oferty', path: '/oferty' },
     { name: 'Kontakt', path: '/przewodnik' },
 ]
-
+/*Komponent paska nawigacji */
 export const HeaderTop = () => {
 
     const cartItemsCount = 0;

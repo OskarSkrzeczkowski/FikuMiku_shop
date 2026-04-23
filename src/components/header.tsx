@@ -1,16 +1,31 @@
 import { Link } from 'react-router-dom';
-import { Search, User, Heart, ShoppingCart, ChevronDown } from 'lucide-react';
+import { Search, User, Heart, ShoppingCart, ChevronDown, Baby, Rocket, GraduationCap, Shapes, Sparkles, Clock, Star } from 'lucide-react';
+import { useState } from 'react';
 
 const NAV_LINKS = [
     { name: 'Marki', path: '/marki' },
     { name: 'Oferty', path: '/oferty' },
-    { name: 'Kontakt', path: '/przewodnik' },
+    { name: 'Kontakt', path: '/kontakt' },
 ]
+
 /*Komponent paska nawigacji */
 export const HeaderTop = () => {
 
-    const cartItemsCount = 0;
+    const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const cartItemsCount = 3;
 
+    const categories = [
+        { name: '0-2 LATA', icon: <Baby className="w-4 h-4" />, path: '/kategoria/0-2' },
+        { name: '3-5 LAT', icon: <Rocket className="w-4 h-4" />, path: '/kategoria/3-5' },
+        { name: '6+ LAT', icon: <GraduationCap className="w-4 h-4" />, path: '/kategoria/6plus' },
+        { name: 'EDUKACYJNE', icon: <Shapes className="w-4 h-4" />, path: '/kategoria/edukacyjne' },
+    ];
+
+    const newsItems = [
+        { name: 'Dostawa z tego tygodnia', icon: <Clock className="w-4 h-4" />, path: '/nowosci/ostatnie' },
+        { name: 'Bestsellery miesiąca', icon: <Star className="w-4 h-4" />, path: '/nowosci/bestsellery' },
+        { name: 'Nadchodzące hity', icon: <Sparkles className="w-4 h-4" />, path: '/nowosci/zapowiedzi' },
+    ]
     return (
         <header className="bg-blue-400 text-white shadow-md">
             <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
@@ -23,14 +38,65 @@ export const HeaderTop = () => {
 
                 <nav className="hidden lg:flex gap-5 font-bold text-sm items-center">
                     
-                    <div className="flex items-center cursor-pointer hover:text-blue-200 transition group">
-                        <span>Nowości</span>
-                        <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
+                    {/*Zakladka kategorie, lista do kategorii*/}
+                    <div 
+                         className="relative flex items-center group"
+                         onMouseEnter={() => setOpenMenu('categories')}
+                         onMouseLeave={() => setOpenMenu(null)}
+                    >
+
+                    <button className="flex items-center gap-1 hover:text-orange-200 transition h-full py-4 tracking-wider cursor-pointer">
+                    Kategorie
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${openMenu === 'categories' ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {openMenu === 'categories' && (
+                        <div className="absolute top-full left-0 w-64 bg-white rounded-b-2xl shadow-2xl py-3 border-t-0 border border-slate-100 text-slate-800 animate-in fade-in slide-in-from-top-1 duration-200 z-50">
+                            {categories.map((cat) => (
+                                <Link 
+                                    key={cat.name} 
+                                    to={cat.path}
+                                    className="flex items-center gap-4 px-5 py-3 hover:bg-blue-50 hover:text-blue-600 transition group/item"
+                                >
+                                    <div className="p-2 bg-blue-50 rounded-xl text-blue-500 group-hover/item:bg-blue-100 transition-colors">
+                                        {cat.icon}
+                                    </div>
+                                        <span className="font-bold text-xs">{cat.name}</span>
+                                </Link>
+                            ))}
+                        </div>
+                        )}
                     </div>
                     
-                    <div className="flex items-center cursor-pointer hover:text-blue-200 transition group">
-                        <span>Kategorie</span>
-                        <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
+                    {/*Zakladka nowości, lista do przeglądu nowości itp. */}
+                    <div 
+                        className="relative flex items-center group"
+                        onMouseEnter={() => setOpenMenu('news')}
+                        onMouseLeave={() => setOpenMenu(null)}
+                    >
+
+                    <button className="flex items-center gap-1 hover:text-orange-200 transition h-full py-4 tracking-wider cursor-pointer">
+                    Nowości
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${openMenu === 'news' ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {openMenu === 'news' && (
+
+                        <div className="absolute top-full left-0 w-64 bg-white rounded-b-2xl shadow-2xl py-3 border-t-0 border border-slate-100 text-slate-800 animate-in fade-in slide-in-from-top-1 duration-200 z-50">
+                            {newsItems.map((item) => (
+                                <Link 
+                                    key={item.name} 
+                                    to={item.path}
+                                    className="flex items-center gap-4 px-5 py-3 hover:bg-orange-50 hover:text-orange-600 transition group/item"
+                                >
+                                    <div className="p-2 bg-orange-50 rounded-xl text-orange-500 group-hover/item:bg-orange-100 transition-colors">
+                                        {item.icon}
+                                    </div>
+                                        <span className="font-bold text-xs">{item.name}</span>
+                                </Link>
+                                ))}
+                        </div>
+                        )}
                     </div>
 
                     {NAV_LINKS.map((link) => (

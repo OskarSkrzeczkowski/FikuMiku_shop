@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { HeaderTop } from './header';
+import { HeaderTop } from '../navComponents/header';
 import { Footer } from './sections';
 
 /*Komponent który określa stały szablon strony*/

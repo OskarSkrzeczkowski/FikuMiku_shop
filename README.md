@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+FikuMiku - Sklep Internetowy z Zabawkami
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+| Opis wstępny |
+Projekt aplikacji e-commerce dedykowanej sprzedaży zabawek edukacyjnych i kreatywnych dla dzieci. Aplikacja została zaprojektowana z naciskiem na przejrzysty interfejs oraz intuicyjną nawigację.
 
-Currently, two official plugins are available:
+| Technologie |
+W projekcie zastosowaliśmy następujące rozwiązania technologiczne:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 18 - biblioteka interfejsu użytkownika.
 
-## React Compiler
+TypeScript - zapewnienie statycznego typowania danych.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tailwind CSS - framework narzędziowy do stylizacji komponentów.
 
-## Expanding the ESLint configuration
+React Router Dom - obsługa trasowania i nawigacji wewnątrz aplikacji.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Lucide React - biblioteka ikon wektorowych.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Vite - narzędzie do budowania i serwowania aplikacji.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Funkcjonalności |
+System nawigacji - płynne przechodzenie między stroną główną a kartami produktów bez odświeżania strony.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Responsywność - interfejs dostosowany do urządzeń mobilnych oraz desktopowych.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Kategorie produktów - segmentacja asortymentu według przedziałów wiekowych (0-2 lata, 3-5 lat, 6+ lat).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Strona produktu - dynamiczne generowanie widoku szczegółowego na podstawie parametrów URL.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Architektura Layoutu - wykorzystanie wspólnego szablonu dla spójnego wyglądu nagłówka i stopki.
+
+/ Dalszą funkcjonalność będziemy uzupełniać wraz z rozwojem projektu /
+
+| Instrukcja instalacji i uruchomienia |
+
+! Dodać do vercela !
+
+| Podział pracy i odpowiedzialności |
+
+Oskar Skrzeczkowski - odpowiedzialność za architekturę komponentów, konfigurację React Router, logikę zarządzania stanem interfejsu oraz strukturę podstrony produktu, wspieranie w warstwie wizualnej (Tailwind CSS).
+
+Oskar Stefański - odpowiedzialność za warstwę wizualną, implementację stylów Tailwind CSS, responsywność elementów UI, wsparcie przy pracy nad komponentami o wyższym poziomie złożoności.
+

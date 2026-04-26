@@ -10,7 +10,6 @@ export const ProductPage = () => {
 
   return (
     <div className="bg-white min-h-screen pb-20">
-        {/* Element do nawigacji wstecz, czyli powrotu na stronę główną */}
       <div className="container mx-auto px-4 py-6">
         <Link to="/" className="flex items-center text-sm font-bold text-blue-500 hover:text-blue-600 transition">
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -19,7 +18,6 @@ export const ProductPage = () => {
       </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Sekcja przeznaczona dla zdjęć produktu */}
           <div className="space-y-4">
             <div className="aspect-square bg-slate-100 rounded-3xl overflow-hidden border-2 border-slate-50 shadow-inner">
               <div className="w-full h-full flex items-center justify-center text-slate-400">
@@ -52,7 +50,6 @@ export const ProductPage = () => {
               </p>
             </div>
               
-            {/* Przyciski do określania liczby produktów, które klient będzie chciał kupić */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <div className="flex items-center justify-between border-2 border-slate-100 rounded-xl px-4 py-2 bg-white min-w-[140px]">
                 <button className="text-blue-500 hover:bg-blue-50 p-1 rounded-md transition"><Minus className="w-5 h-5" /></button>
@@ -84,7 +81,6 @@ export const ProductPage = () => {
 
           </div>
         </div>
-        {/* Szczegółowe dane o produkcie*/}
         <div className="mt-20">
           <div className="flex border-b border-slate-100 mb-8">
             <button className="border-b-4 border-blue-500 pb-4 px-8 text-sm font-black text-slate-800">OPIS SZCZEGÓŁOWY</button>

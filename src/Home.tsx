@@ -1,5 +1,6 @@
 import { HeroBanner } from './components/hero';
-import { Categories, Bestsellers } from './components/sections';
+import { Bestsellers } from './components/bestsellers';
+import { Categories } from './components/categories';
 
 /*Komponent sekcji głównych na stronie głównej sklepu*/
 export default function Home() {

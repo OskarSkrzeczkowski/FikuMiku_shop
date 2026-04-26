@@ -14,18 +14,18 @@ export const HeaderTop = () => {
     const [openMenu, setOpenMenu] = useState<string | null>(null);
     const cartItemsCount = 3;
 
-    const categories = [
-        { name: '0-2 LATA', icon: <Baby className="w-4 h-4" />, path: '/kategoria/0-2' },
-        { name: '3-5 LAT', icon: <Rocket className="w-4 h-4" />, path: '/kategoria/3-5' },
-        { name: '6+ LAT', icon: <GraduationCap className="w-4 h-4" />, path: '/kategoria/6plus' },
-        { name: 'EDUKACYJNE', icon: <Shapes className="w-4 h-4" />, path: '/kategoria/edukacyjne' },
-    ];
+const categories = [
+    { name: '0-2 LATA', icon: <Baby className="w-4 h-4" />, path: '/sklep/kategoria/0-2' },
+    { name: '3-5 LAT', icon: <Rocket className="w-4 h-4" />, path: '/sklep/kategoria/3-5' },
+    { name: '6+ LAT', icon: <GraduationCap className="w-4 h-4" />, path: '/sklep/kategoria/6plus' },
+    { name: 'EDUKACYJNE', icon: <Shapes className="w-4 h-4" />, path: '/sklep/kategoria/edukacyjne' },
+];
 
-    const newsItems = [
-        { name: 'Dostawa z tego tygodnia', icon: <Clock className="w-4 h-4" />, path: '/nowosci/ostatnie' },
-        { name: 'Bestsellery miesiąca', icon: <Star className="w-4 h-4" />, path: '/nowosci/bestsellery' },
-        { name: 'Nadchodzące hity', icon: <Sparkles className="w-4 h-4" />, path: '/nowosci/zapowiedzi' },
-    ]
+const newsItems = [
+    { name: 'Dostawa z tego tygodnia', icon: <Clock className="w-4 h-4" />, path: '/sklep/nowosc/ostatnie' },
+    { name: 'Bestsellery miesiąca', icon: <Star className="w-4 h-4" />, path: '/sklep/nowosc/bestsellery' },
+    { name: 'Nadchodzące hity', icon: <Sparkles className="w-4 h-4" />, path: '/sklep/nowosc/zapowiedzi' },
+];
     return (
         <header className="bg-blue-400 text-white shadow-md">
             <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
@@ -124,7 +124,7 @@ export const HeaderTop = () => {
                     </div>
                     
                     <div className="flex items-center gap-5 text-[11px] font-bold tracking-wide">
-                        <Link to="/konto" className="flex flex-col items-center hover:text-blue-200 transition">
+                        <Link to="/logowanie" className="flex flex-col items-center hover:text-blue-200 transition">
                             <User className="w-5 h-5 mb-0.5" />
                             <span>Konto</span>
                         </Link>

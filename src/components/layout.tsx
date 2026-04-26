@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { HeaderTop } from '../navComponents/header';
-import { Footer } from './sections';
+import { Footer } from './footer';
 
 /*Komponent który określa stały szablon strony*/
 export const Layout = () => {

@@ -1,13 +1,17 @@
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom'; 
+import photo1 from '../../public/photo1.jpg';
+import photo2 from '../../public/photo2.jpg';
+import photo3 from '../../public/photo3.jpg';
+import photo4 from '../../public/photo4.jpg';
 
 /*Komponent najczęściej sprzedawanych produktow*/ 
 export const Bestsellers = () => {
     const products = [
-    { id: 1, name: "Klocki drewniane", price: "29,99 PLN", img: "src/assets/photo4.jpg", slug: "klocki-drewniane" },
-    { id: 2, name: "Telefonik", price: "19,99 PLN", img: "src/assets/photo1.jpg", slug: "telefonik-interaktywny" },
-    { id: 3, name: "Układanka Edukacyjna", price: "29,99 PLN", img: "src/assets/photo3.jpg", slug: "ukladanka-edukacyjna" },
-    { id: 4, name: "Gitara", price: "59,99 PLN", img: "src/assets/photo2.jpg", slug: "gitara-dla-dzieci" },
+    { id: 1, name: "Klocki drewniane", price: "29,99 PLN", img: `${photo4}`, slug: "klocki-drewniane" },
+    { id: 2, name: "Telefonik", price: "19,99 PLN", img: `${photo3}`, slug: "telefonik-interaktywny" },
+    { id: 3, name: "Układanka Edukacyjna", price: "29,99 PLN", img: `${photo1}`, slug: "ukladanka-edukacyjna" },
+    { id: 4, name: "Gitara", price: "59,99 PLN", img: `${photo2}`, slug: "gitara-dla-dzieci" },
 ];
     return (
         <section className="py-16 bg-gray-50">

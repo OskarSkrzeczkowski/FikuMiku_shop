@@ -1,10 +1,12 @@
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import photo2 from '../../public/photo2.jpg';
+import photo4 from '../../public/photo4.jpg';
 
 /* Symulacja danych koszyka */
 const CART_ITEMS = [
-    { id: 1, name: "Klocki drewniane", price: 29.99, img: "src/assets/photo4.jpg", quantity: 1, slug: "klocki-drewniane" },
-    { id: 4, name: "Gitara dla dzieci", price: 59.99, img: "src/assets/photo2.jpg", quantity: 1, slug: "gitara-dla-dzieci" },
+    { id: 1, name: "Klocki drewniane", price: 29.99, img: `${photo2}`, quantity: 1, slug: "klocki-drewniane" },
+    { id: 4, name: "Gitara dla dzieci", price: 59.99, img: `${photo4}`, quantity: 1, slug: "gitara-dla-dzieci" },
 ];
 
 export const CartPage = () => {

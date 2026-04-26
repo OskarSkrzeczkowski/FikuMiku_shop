@@ -33,7 +33,8 @@ Architektura Layoutu - wykorzystanie wspólnego szablonu dla spójnego wyglądu 
 
 | Instrukcja instalacji i uruchomienia |
 
-! Dodać do vercela !
+Aplikacja jest udostępniona w architekturze Serverless pod adresem:
+URL: https://fiku-miku-shop.vercel.app/
 
 | Podział pracy i odpowiedzialności |
 

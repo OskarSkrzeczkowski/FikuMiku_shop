@@ -1,7 +1,7 @@
-import photo1  from '../assets/photo1.jpg';
-import photo2 from '../assets/photo2.jpg';
-import photo3  from '../assets/photo3.jpg';
-import photo4  from '../assets/photo4.jpg';
+import photo1  from '../../public/photo1.jpg';
+import photo2 from '../../public/photo2.jpg';
+import photo3  from '../../public/photo3.jpg';
+import photo4  from '../../public/photo4.jpg';
 
 /*Komponent powitalny, reklamowy*/
 export const HeroBanner = () => {

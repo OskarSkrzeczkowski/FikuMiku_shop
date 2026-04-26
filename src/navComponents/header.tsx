@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
     { name: 'Marki', path: '/marki' },
-    { name: 'Oferty', path: '/oferty' },
+    { name: 'O nas', path: '/onas' },
     { name: 'Kontakt', path: '/kontakt' },
 ]
 

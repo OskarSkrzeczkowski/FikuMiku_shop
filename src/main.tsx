@@ -7,6 +7,8 @@ import { LoginPage } from './components/loginPage';
 import { BrandsPage } from './navComponents/brands';
 import { ContactPage } from './navComponents/contact';
 import { AboutPage } from './navComponents/aboutPage';
+import { FavoritesPage } from './components/productList';
+import { CartPage } from './components/cartPage';
 import './App.css';
 import Home from './Home';
 import { Layout } from './components/layout';
@@ -31,7 +33,11 @@ createRoot(document.getElementById('root')!).render(
 
         <Route path="kontakt" element={<ContactPage />} />
 
-        <Route path="onas" element={<AboutPage />} />.
+        <Route path="onas" element={<AboutPage />} />
+
+        <Route path="ulubione" element={<FavoritesPage />} />
+
+        <Route path="koszyk" element={<CartPage />} />
         
         <Route path="*" element={<div className="py-20 text-center">Element strony w trakcie prac</div>} />
   

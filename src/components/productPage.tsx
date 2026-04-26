@@ -66,8 +66,6 @@ export const ProductPage = () => {
               </button>
             </div>
               
-            {/* Infromacje dla kupującego */}
-              
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 pt-8">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-green-50 text-green-600 rounded-lg"><Truck className="w-5 h-5" /></div>

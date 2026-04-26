@@ -1,3 +1,8 @@
+import photo1  from '../assets/photo1.jpg';
+import photo2 from '../assets/photo2.jpg';
+import photo3  from '../assets/photo3.jpg';
+import photo4  from '../assets/photo4.jpg';
+
 /*Komponent powitalny, reklamowy*/
 export const HeroBanner = () => {
     return (
@@ -22,28 +27,28 @@ export const HeroBanner = () => {
                 <div className="relative h-[450px] w-full flex justify-center items-center">
                     
                     <div className="absolute right-[20%] top-0 w-64 h-80 rounded-t-full rounded-b-3xl overflow-hidden border-4 border-black shadow-xl z-10 cursor-pointer hover:scale-105 transition-transform duration-300 ">
-                        <img src="src/assets/photo1.jpg" alt="Namiot Tipi" className="w-full h-full object-cover" />
+                        <img src={photo1} alt="Namiot Tipi" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute top-[10%] left-[37%] bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
                         Telefonik: 19.99
                     </div>
 
                     <div className="absolute top-[-5%] right-14 w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-xl z-20 cursor-pointer hover:scale-105 transition-transform duration-300">
-                        <img src="src/assets/photo2.jpg" alt="Dziecko bawiące się" className="w-full h-full object-cover" />
+                        <img src={photo2} alt="Dziecko bawiące się" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute top-[20%] right-[9%] bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
                         Gitara: 59.99
                     </div>
 
                     <div className="absolute bottom-[5%] left-[20%] w-60 h-60 rounded-full overflow-hidden border-4 border-white shadow-xl z-20 cursor-pointer hover:scale-105 transition-transform duration-300">
-                        <img src="src/assets/photo3.jpg" alt="Szczęśliwe dziecko" className="w-full h-full object-cover" />
+                        <img src={photo3} alt="Szczęśliwe dziecko" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute bottom-[5%] left-[28%] bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
                         Ukladanka: 29.99
                     </div>
 
                     <div className="absolute bottom-8 right-[5%] w-48 h-48 rounded-[40px] overflow-hidden border-4 border-white shadow-xl z-10 bg-white cursor-pointer hover:scale-105 transition-transform duration-300">
-                        <img src="src/assets/photo4.jpg" alt="Klocki magnetyczne" className="w-full h-full object-cover scale-110" />
+                        <img src={photo4} alt="Klocki magnetyczne" className="w-full h-full object-cover scale-110" />
                     </div>
                     <div className="absolute bottom-8 right-2 bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
                         Drewniane klocki: 39.99

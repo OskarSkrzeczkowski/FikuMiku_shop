@@ -36,11 +36,11 @@ export const CartPage = () => {
                         <div className="lg:col-span-2 space-y-4">
                             {CART_ITEMS.map((item) => (
                                 <div key={item.id} className="bg-white p-4 md:p-6 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-24 h-24 bg-slate-100 rounded-2xl overflow-hidden flex-shrink-0">
+                                    <div className="w-24 h-24 bg-slate-100 rounded-2xl overflow-hidden shrink-0">
                                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
                                     </div>
                                     
-                                    <div className="flex-grow text-center md:text-left">
+                                    <div className="grow text-center md:text-left">
                                         <Link to={`/produkt/${item.slug}`} className="font-black text-slate-800 hover:text-blue-500 transition-colors uppercase italic">
                                             {item.name}
                                         </Link>
@@ -49,11 +49,11 @@ export const CartPage = () => {
 
                                     <div className="flex items-center gap-4 bg-slate-50 p-2 rounded-2xl border border-slate-100">
                                         <button className="p-1 hover:text-blue-500 transition-colors cursor-pointer"><Minus className="w-4 h-4" /></button>
-                                        <span className="font-black text-slate-800 min-w-[20px] text-center">{item.quantity}</span>
+                                        <span className="font-black text-slate-800 min-w-5 text-center">{item.quantity}</span>
                                         <button className="p-1 hover:text-blue-500 transition-colors cursor-pointer"><Plus className="w-4 h-4" /></button>
                                     </div>
 
-                                    <div className="text-right min-w-[100px]">
+                                    <div className="text-right min-w-25">
                                         <p className="font-black text-slate-900">{(item.price * item.quantity).toFixed(2)} PLN</p>
                                     </div>
 

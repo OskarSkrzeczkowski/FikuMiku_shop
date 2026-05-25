@@ -13,6 +13,7 @@ import './App.css';
 import Home from './Home';
 import { Layout } from './components/layout';
 
+
 /*Komponent główny, którego zadaniem jest nawigacja po aplikacji*/
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

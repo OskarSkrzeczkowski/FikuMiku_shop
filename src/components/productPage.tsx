@@ -51,13 +51,13 @@ export const ProductPage = () => {
             </div>
               
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex items-center justify-between border-2 border-slate-100 rounded-xl px-4 py-2 bg-white min-w-[140px]">
+              <div className="flex items-center justify-between border-2 border-slate-100 rounded-xl px-4 py-2 bg-white min-w-35">
                 <button className="text-blue-500 hover:bg-blue-50 p-1 rounded-md transition"><Minus className="w-5 h-5" /></button>
                 <span className="font-black text-lg">1</span>
                 <button className="text-blue-500 hover:bg-blue-50 p-1 rounded-md transition"><Plus className="w-5 h-5" /></button>
               </div>
               
-              <button className="flex-grow bg-orange-500 hover:bg-orange-600 text-white font-black py-4 px-8 rounded-2xl shadow-lg shadow-orange-200 transition-all active:scale-95 flex items-center justify-center gap-3">
+              <button className="grow bg-orange-500 hover:bg-orange-600 text-white font-black py-4 px-8 rounded-2xl shadow-lg shadow-orange-200 transition-all active:scale-95 flex items-center justify-center gap-3">
                 DODAJ DO KOSZYKA
               </button>
               

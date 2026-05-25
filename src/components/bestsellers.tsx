@@ -19,8 +19,8 @@ export const Bestsellers = () => {
                 <h2 className="text-2xl font-black mb-10 tracking-tight italic">BESTSELLERY</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
                     {products.map((product) => (
-                        <div key={product.id} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow hover:scale-105 transition-transform duration-300 cursor-pointer">
-                            <Link to={`/produkt/${product.slug}`} className="flex-grow">
+                        <div key={product.id} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer">
+                            <Link to={`/produkt/${product.slug}`} className="grow">
                             <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100 ">
                                 <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
                             </div>

@@ -1,18 +1,19 @@
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom'; 
+import { useCart } from '../contexts/CartContext';
 import photo1 from '../../public/photo1.jpg';
 import photo2 from '../../public/photo2.jpg';
 import photo3 from '../../public/photo3.jpg';
 import photo4 from '../../public/photo4.jpg';
 
-/*Komponent najczęściej sprzedawanych produktow*/ 
 export const Bestsellers = () => {
     const products = [
-    { id: 1, name: "Klocki drewniane", price: "29,99 PLN", img: `${photo4}`, slug: "klocki-drewniane" },
-    { id: 2, name: "Telefonik", price: "19,99 PLN", img: `${photo3}`, slug: "telefonik-interaktywny" },
-    { id: 3, name: "Układanka Edukacyjna", price: "29,99 PLN", img: `${photo1}`, slug: "ukladanka-edukacyjna" },
-    { id: 4, name: "Gitara", price: "59,99 PLN", img: `${photo2}`, slug: "gitara-dla-dzieci" },
+    { id: 1, name: "Klocki drewniane", price: 29.99, img: `${photo4}`, slug: "klocki-drewniane" },
+    { id: 2, name: "Telefonik", price: 19.99, img: `${photo1}`, slug: "telefonik-interaktywny" },
+    { id: 3, name: "Układanka Edukacyjna", price: 29.99, img: `${photo3}`, slug: "ukladanka-edukacyjna" },
+    { id: 4, name: "Gitara", price: 59.99, img: `${photo2}`, slug: "gitara-dla-dzieci" },
 ];
+    const { addToCart } = useCart();
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4 ">
@@ -27,10 +28,12 @@ export const Bestsellers = () => {
                             <h3 className="font-medium text-gray-800 text-sm mb-1">{product.name}</h3>
                             <p className="font-black text-lg mb-4">{product.price}</p>
                             </Link>
-                            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg text-xs transition-colors flex items-center justify-center gap-2">
-                                <ShoppingCart className="w-4 h-4" />
-                                DODAJ DO KOSZYKA
-                            </button>
+                            <button onClick={(e) => {e.preventDefault();
+                                addToCart(product);}}
+                                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                                >
+                                <ShoppingCart className="w-4 h-4" />DODAJ DO KOSZYKA
+                                </button>
                         </div>
                     ))}
                 </div>

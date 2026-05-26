@@ -30,6 +30,6 @@ export const connectDB = async (): Promise<void> => {
         console.log("--- KONIEC DEBUGOWANIA ---");
 
     } catch (error) {
-        console.error(`❌ GŁÓWNY BŁĄD (Catch): ${(error as Error).message}`);
+        console.error(` GŁÓWNY BŁĄD (Catch): ${(error as Error).message}`);
     }
 };

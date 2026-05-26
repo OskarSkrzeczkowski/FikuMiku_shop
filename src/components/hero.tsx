@@ -3,7 +3,6 @@ import photo2 from '../../public/photo2.jpg';
 import photo3  from '../../public/photo3.jpg';
 import photo4  from '../../public/photo4.jpg';
 
-/*Komponent powitalny, reklamowy*/
 export const HeroBanner = () => {
     return (
         <section className="relative bg-blue-300 overflow-hidden">

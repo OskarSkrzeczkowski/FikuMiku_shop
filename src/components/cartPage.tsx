@@ -1,20 +1,15 @@
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import photo2 from '../../public/photo2.jpg';
-import photo4 from '../../public/photo4.jpg';
-
-/* Symulacja danych koszyka */
-const CART_ITEMS = [
-    { id: 1, name: "Klocki drewniane", price: 29.99, img: `${photo2}`, quantity: 1, slug: "klocki-drewniane" },
-    { id: 4, name: "Gitara dla dzieci", price: 59.99, img: `${photo4}`, quantity: 1, slug: "gitara-dla-dzieci" },
-];
+import { useCart } from '../contexts/CartContext';
 
 export const CartPage = () => {
-    const subtotal = CART_ITEMS.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-    const shipping = 15.00;
+    const { items, addToCart, decrementQuantity, removeFromCart } = useCart();
+
+    const subtotal = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const shipping = items.length > 0 ? 15.00 : 0.00; 
     const total = subtotal + shipping;
 
-    const hasItems = CART_ITEMS.length > 0;
+    const hasItems = items.length > 0;
 
     return (
         <div className="bg-slate-50 min-h-screen py-12">
@@ -34,7 +29,7 @@ export const CartPage = () => {
                         
                         {/* Lista produktów */}
                         <div className="lg:col-span-2 space-y-4">
-                            {CART_ITEMS.map((item) => (
+                            {items.map((item) => (
                                 <div key={item.id} className="bg-white p-4 md:p-6 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
                                     <div className="w-24 h-24 bg-slate-100 rounded-2xl overflow-hidden shrink-0">
                                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
@@ -48,16 +43,31 @@ export const CartPage = () => {
                                     </div>
 
                                     <div className="flex items-center gap-4 bg-slate-50 p-2 rounded-2xl border border-slate-100">
-                                        <button className="p-1 hover:text-blue-500 transition-colors cursor-pointer"><Minus className="w-4 h-4" /></button>
+                                        <button 
+                                            onClick={() => decrementQuantity(item.id)}
+                                            className="p-1 hover:text-blue-500 transition-colors cursor-pointer"
+                                        >
+                                            <Minus className="w-4 h-4" />
+                                        </button>
+                                        
                                         <span className="font-black text-slate-800 min-w-5 text-center">{item.quantity}</span>
-                                        <button className="p-1 hover:text-blue-500 transition-colors cursor-pointer"><Plus className="w-4 h-4" /></button>
+                                        
+                                        <button 
+                                            onClick={() => addToCart(item)} 
+                                            className="p-1 hover:text-blue-500 transition-colors cursor-pointer"
+                                        >
+                                            <Plus className="w-4 h-4" />
+                                        </button>
                                     </div>
 
                                     <div className="text-right min-w-25">
                                         <p className="font-black text-slate-900">{(item.price * item.quantity).toFixed(2)} PLN</p>
                                     </div>
 
-                                    <button className="p-2 text-slate-300 hover:text-red-500 transition-colors cursor-pointer">
+                                    <button 
+                                        onClick={() => removeFromCart(item.id)}
+                                        className="p-2 text-slate-300 hover:text-red-500 transition-colors cursor-pointer"
+                                    >
                                         <Trash2 className="w-5 h-5" />
                                     </button>
                                 </div>

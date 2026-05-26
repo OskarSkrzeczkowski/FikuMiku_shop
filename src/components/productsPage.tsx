@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-/* Symulacja bazy danych - tymczasowa */
+
 const ALL_PRODUCTS = [
     { id: 1, name: "Klocki drewniane", price: "29,99 PLN", category: "0-2", tag: "bestsellery", slug: "klocki-drewniane" },
     { id: 2, name: "Telefonik", price: "19,99 PLN", category: "3-5", tag: "nowosci", slug: "telefonik-interaktywny" },

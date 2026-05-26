@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { Truck, ShieldCheck, ArrowLeft, Heart, Minus, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/**Komponent, który odpowiada za wyświetlenie intefejsu produktu.**/
 export const ProductPage = () => {
   const { slug } = useParams();
 

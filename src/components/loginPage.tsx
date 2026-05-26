@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Lock, Mail, UserPlus, LogIn } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext'; 
 
 export const LoginPage = () => {
+    const { login } = useAuth(); 
     const [isLoginMode, setIsLoginMode] = useState<boolean>(true);
     
     const [email, setEmail] = useState<string>('');
@@ -12,11 +14,11 @@ export const LoginPage = () => {
     const [success, setSuccess] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess(null);
-    setLoading(false);
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setError(null);
+        setSuccess(null);
+        setLoading(false);
 
         if (!email || !password) {
             setError('Uzupełnij wszystkie pola!');
@@ -42,19 +44,14 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 throw new Error(data.message || 'Coś poszło nie tak...');
             }
 
-  
             setSuccess(data.message);
             
             if (isLoginMode) {
-
-                localStorage.setItem('fiku_miku_token', data.token);
-                localStorage.setItem('fiku_miku_user', JSON.stringify(data.user));
+                login(data.user, data.token);
                 
-       
                 setEmail('');
                 setPassword('');
                 
-     
                 alert('Zalogowano pomyślnie! Twój token został zapisany.');
             } else {
                 setIsLoginMode(true);
@@ -81,7 +78,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                     </p>
                 </div>
 
-  
                 {error && (
                     <div className="mb-6 p-4 bg-red-50 border-2 border-red-100 text-red-600 font-bold rounded-2xl text-sm text-center">
                         {error}

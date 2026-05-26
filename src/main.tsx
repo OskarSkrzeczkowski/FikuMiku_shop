@@ -12,11 +12,15 @@ import { CartPage } from './components/cartPage';
 import './App.css';
 import Home from './Home';
 import { Layout } from './components/layout';
+import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
 
 
-/*Komponent główny, którego zadaniem jest nawigacja po aplikacji*/
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <AuthProvider>
+    <CartProvider>
     <BrowserRouter>
       <Routes>
        
@@ -39,11 +43,15 @@ createRoot(document.getElementById('root')!).render(
         <Route path="ulubione" element={<FavoritesPage />} />
 
         <Route path="koszyk" element={<CartPage />} />
+
+        <Route path="polityka" element={<PrivacyPolicy />} />
         
         <Route path="*" element={<div className="py-20 text-center">Element strony w trakcie prac</div>} />
   
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
+    </AuthProvider>
   </StrictMode>
 );

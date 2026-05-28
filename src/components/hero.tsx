@@ -23,7 +23,7 @@ export const HeroBanner = () => {
                     </button>
                 </div>
 
-                <div className="relative h-[450px] w-full flex justify-center items-center">
+                <div className="relative h-112.5 w-full flex justify-center items-center">
                     
                     <div className="absolute right-[20%] top-0 w-64 h-80 rounded-t-full rounded-b-3xl overflow-hidden border-4 border-black shadow-xl z-10 cursor-pointer hover:scale-105 transition-transform duration-300 ">
                         <img src={photo1} alt="Namiot Tipi" className="w-full h-full object-cover" />

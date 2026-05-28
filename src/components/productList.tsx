@@ -1,15 +1,13 @@
 import { Heart, ShoppingCart, Trash2, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import photo3  from '../assets/photo3.jpg';
-import photo4 from '../assets/photo4.jpg';
-
-const FAVORITE_PRODUCTS = [
-    { id: 1, name: "Klocki drewniane", price: "29,99 PLN", img: `${photo4}`, slug: "klocki-drewniane" },
-    { id: 3, name: "Układanka Edukacyjna", price: "29,99 PLN", img: `${photo3}`, slug: "ukladanka-edukacyjna" },
-];
+import { useFavorites } from '../contexts/FavoritesContext'; 
+import { useCart } from '../contexts/CartContext'; 
 
 export const FavoritesPage = () => {
-    const hasFavorites = FAVORITE_PRODUCTS.length > 0;
+    const { favorites, toggleFavorite } = useFavorites();
+    const { addToCart } = useCart(); 
+
+    const hasFavorites = favorites.length > 0;
 
     return (
         <div className="bg-white min-h-screen py-12">
@@ -31,10 +29,13 @@ export const FavoritesPage = () => {
 
                 {hasFavorites ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {FAVORITE_PRODUCTS.map((product) => (
-                            <div key={product.id} className="group relative bg-white p-4 rounded-3xl border-2 border-slate-50 hover:border-red-100 hover:shadow-xl hover:shadow-red-50 transition-all duration-300 cursor-pointer">
+                        {favorites.map((product) => (
+                            <div key={product._id} className="group relative bg-white p-4 rounded-3xl border-2 border-slate-50 hover:border-red-100 hover:shadow-xl hover:shadow-red-50 transition-all duration-300 cursor-pointer">
                                 
-                                <button className="absolute top-6 right-6 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-xl text-slate-400 hover:text-red-500 hover:bg-white shadow-sm transition-all cursor-pointer">
+                                <button 
+                                    onClick={() => toggleFavorite(product)}
+                                    className="absolute top-6 right-6 z-10 bg-white/80 backdrop-blur-sm p-2 rounded-xl text-slate-400 hover:text-red-500 hover:bg-white shadow-sm transition-all cursor-pointer"
+                                >
                                     <Trash2 className="w-4 h-4" />
                                 </button>
 
@@ -49,10 +50,21 @@ export const FavoritesPage = () => {
                                     <h3 className="font-bold text-slate-800 text-sm mb-1 group-hover:text-red-500 transition-colors">
                                         {product.name}
                                     </h3>
-                                    <p className="font-black text-lg text-slate-900 mb-4">{product.price}</p>
+                                    <p className="font-black text-lg text-slate-900 mb-4">
+                                        {typeof product.price === 'number' ? `${product.price.toFixed(2)} PLN` : product.price}
+                                    </p>
                                 </Link>
 
-                                <button className="w-full bg-slate-900 hover:bg-blue-500 text-white font-black py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
+                                <button 
+                                    onClick={() => addToCart({
+                                        _id: product._id,
+                                        name: product.name,
+                                        price: product.price,
+                                        img: product.img,
+                                        slug: product.slug
+                                    })}
+                                    className="w-full bg-slate-900 hover:bg-blue-500 text-white font-black py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
+                                >
                                     <ShoppingCart className="w-4 h-4" />
                                     DODAJ DO KOSZYKA
                                 </button>

@@ -1,8 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
-
-interface User {
-    email: string;
-}
+import type{ User } from '../types'; 
 
 interface AuthContextType {
     user: User | null;
@@ -14,7 +11,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(() => {
-
         const savedUser = localStorage.getItem('fiku_miku_user');
         return savedUser ? JSON.parse(savedUser) : null;
     });
@@ -22,13 +18,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const login = (userData: User, token: string) => {
         localStorage.setItem('fiku_miku_token', token);
         localStorage.setItem('fiku_miku_user', JSON.stringify(userData));
-        setUser(userData); 
+        setUser(userData);
     };
 
     const logout = () => {
         localStorage.removeItem('fiku_miku_token');
         localStorage.removeItem('fiku_miku_user');
-        setUser(null); 
+        setUser(null);
     };
 
     return (

@@ -15,42 +15,45 @@ import { Layout } from './components/layout';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { FavoritesProvider } from './contexts/FavoritesContext';
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
     <CartProvider>
-    <BrowserRouter>
-      <Routes>
+     <FavoritesProvider>
+       <BrowserRouter>
+        <Routes>
        
-        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
           
-        <Route index element={<Home />} />
+          <Route index element={<Home />} />
           
-        <Route path="produkt/:slug" element={<ProductPage />} />
+          <Route path="produkt/:slug" element={<ProductPage />} />
 
-        <Route path="sklep/:type/:value" element={<ProductsPage />} />
+          <Route path="sklep/:type/:value" element={<ProductsPage />} />  
 
-        <Route path="logowanie" element={<LoginPage />} />
+          <Route path="logowanie" element={<LoginPage />} />
 
-        <Route path="marki" element={<BrandsPage />} />
+          <Route path="marki" element={<BrandsPage />} />
 
-        <Route path="kontakt" element={<ContactPage />} />
+          <Route path="kontakt" element={<ContactPage />} />
 
-        <Route path="onas" element={<AboutPage />} />
+          <Route path="onas" element={<AboutPage />} />
 
-        <Route path="ulubione" element={<FavoritesPage />} />
+          <Route path="ulubione" element={<FavoritesPage />} />
 
-        <Route path="koszyk" element={<CartPage />} />
+          <Route path="koszyk" element={<CartPage />} />
 
-        <Route path="polityka" element={<PrivacyPolicy />} />
+          <Route path="polityka" element={<PrivacyPolicy />} />
         
-        <Route path="*" element={<div className="py-20 text-center">Element strony w trakcie prac</div>} />
+          <Route path="*" element={<div className="py-20 text-center">Element strony w trakcie prac</div>} />
   
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+     </FavoritesProvider>
     </CartProvider>
     </AuthProvider>
   </StrictMode>

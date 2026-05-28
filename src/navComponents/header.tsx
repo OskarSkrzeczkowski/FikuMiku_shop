@@ -3,6 +3,7 @@ import { Search, User, Heart, ShoppingCart, ChevronDown, Baby, Rocket, Graduatio
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext'; 
 import { useCart } from '../contexts/CartContext';
+import { useFavorites } from '../contexts/FavoritesContext';
 
 const NAV_LINKS = [
     { name: 'Marki', path: '/marki' },
@@ -15,6 +16,7 @@ export const HeaderTop = () => {
     const [openMenu, setOpenMenu] = useState<string | null>(null);
     const { user, logout } = useAuth(); 
     const { totalItemsCount } = useCart();
+    const { favoritesCount } = useFavorites();
 
     const categories = [
         { name: '0-2 LATA', icon: <Baby className="w-4 h-4" />, path: '/sklep/kategoria/0-2' },
@@ -147,9 +149,15 @@ export const HeaderTop = () => {
                             </Link>
                         )}
                         
-                        <Link to="/ulubione" className="flex flex-col items-center hover:text-blue-200 transition">
+                        <Link to="/ulubione" className="flex flex-col items-center hover:text-blue-200 transition relative">
                             <Heart className="w-5 h-5 mb-0.5" />
                             <span>Lista</span>
+                            
+                            {favoritesCount > 0 && (
+                                <span className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center border border-white-200">
+                                    {favoritesCount}
+                                </span>
+                            )}
                         </Link>
                         
                         <Link to="/koszyk" className="flex flex-col items-center hover:text-blue-200 transition relative">

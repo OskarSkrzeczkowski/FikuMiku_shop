@@ -27,10 +27,9 @@ export const CartPage = () => {
                 {hasItems ? (
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
                         
-                        {/* Lista produktów */}
                         <div className="lg:col-span-2 space-y-4">
                             {items.map((item) => (
-                                <div key={item.id} className="bg-white p-4 md:p-6 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                                <div key={item._id} className="bg-white p-4 md:p-6 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
                                     <div className="w-24 h-24 bg-slate-100 rounded-2xl overflow-hidden shrink-0">
                                         <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
                                     </div>
@@ -44,7 +43,7 @@ export const CartPage = () => {
 
                                     <div className="flex items-center gap-4 bg-slate-50 p-2 rounded-2xl border border-slate-100">
                                         <button 
-                                            onClick={() => decrementQuantity(item.id)}
+                                            onClick={() => decrementQuantity(item._id)}
                                             className="p-1 hover:text-blue-500 transition-colors cursor-pointer"
                                         >
                                             <Minus className="w-4 h-4" />
@@ -65,7 +64,7 @@ export const CartPage = () => {
                                     </div>
 
                                     <button 
-                                        onClick={() => removeFromCart(item.id)}
+                                        onClick={() => removeFromCart(item._id)}
                                         className="p-2 text-slate-300 hover:text-red-500 transition-colors cursor-pointer"
                                     >
                                         <Trash2 className="w-5 h-5" />

@@ -56,7 +56,7 @@ export const PrivacyPolicy: React.FC = () => {
       content: (
         <p>
           W razie jakichkolwiek pytań lub wątpliwości dotyczących ochrony Twoich danych, 
-          zapraszamy do kontaktu pod adresem e-mail: <span className="font-semibold text-[#FF6E1F]">kontakt@fikumiku.pl</span> lub 
+          zapraszamy do kontaktu pod adresem e-mail: <span className="font-semibold text-[#FF6E1F]">sklep@fikumiku.pl</span> lub 
           poprzez formularz w zakładce Kontakt.
         </p>
       ),

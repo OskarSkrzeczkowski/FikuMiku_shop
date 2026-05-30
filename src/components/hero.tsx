@@ -1,7 +1,7 @@
-import photo1  from '../../public/photo1.jpg';
-import photo2 from '../../public/photo2.jpg';
-import photo3  from '../../public/photo3.jpg';
-import photo4  from '../../public/photo4.jpg';
+import photo1  from '../../public/telefonik-interaktywny.jpg';
+import photo2 from '../../public/Drewniana-Gitara.jpg';
+import photo3  from '../../public/Układanka-Edukacyjna-Zwierzęta.jpg';
+import photo4  from '../../public/klocki-drewniane.jpg';
 
 export const HeroBanner = () => {
     return (
@@ -29,14 +29,14 @@ export const HeroBanner = () => {
                         <img src={photo1} alt="Namiot Tipi" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute top-[10%] left-[37%] bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
-                        Telefonik: 19.99
+                        Telefonik: 34.50
                     </div>
 
                     <div className="absolute top-[-5%] right-14 w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-xl z-20 cursor-pointer hover:scale-105 transition-transform duration-300">
                         <img src={photo2} alt="Dziecko bawiące się" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute top-[20%] right-[9%] bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
-                        Gitara: 59.99
+                        Gitara: 69.99
                     </div>
 
                     <div className="absolute bottom-[5%] left-[20%] w-60 h-60 rounded-full overflow-hidden border-4 border-white shadow-xl z-20 cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -50,7 +50,7 @@ export const HeroBanner = () => {
                         <img src={photo4} alt="Klocki magnetyczne" className="w-full h-full object-cover scale-110" />
                     </div>
                     <div className="absolute bottom-8 right-2 bg-white text-cyan-900 font-bold px-4 py-1 rounded-md shadow-lg border-2 border-cyan-900 z-30 text-sm whitespace-nowrap">
-                        Drewniane klocki: 39.99
+                        Drewniane klocki: 59.99
                     </div>
                 </div>
             </div>

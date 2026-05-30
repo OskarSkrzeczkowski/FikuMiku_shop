@@ -51,7 +51,6 @@ export const LoginPage = () => {
                 setEmail('');
                 setPassword('');
                 
-                alert('Zalogowano pomyślnie! Twój token został zapisany.');
                 
                 window.location.href = '/'; 
             } else {

@@ -9,7 +9,6 @@ export const LoginPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     
-    // Stany dla komunikatów błędu i sukcesu
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -53,6 +52,8 @@ export const LoginPage = () => {
                 setPassword('');
                 
                 alert('Zalogowano pomyślnie! Twój token został zapisany.');
+                
+                window.location.href = '/'; 
             } else {
                 setIsLoginMode(true);
                 setPassword('');

@@ -13,6 +13,25 @@ router.get('/', async (_req: Request, res: Response) => {
     }
 });
 
+router.get('/search', async (req: Request, res: Response): Promise<void> => {
+    try {
+        const searchQuery = req.query.q as string;
+        
+        if (!searchQuery) {
+            res.status(200).json([]);
+            return;
+        }
+
+        const products = await Product.find({
+            name: { $regex: searchQuery, $options: 'i' }
+        });
+
+        res.status(200).json(products);
+    } catch (error) {
+        console.error("Błąd wyszukiwania:", error);
+        res.status(500).json({ message: "Błąd serwera podczas wyszukiwania" });
+    }
+});
 
 router.get('/:slug', async (req: Request, res: Response) => {
     try {

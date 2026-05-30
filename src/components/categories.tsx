@@ -1,6 +1,21 @@
+import { useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { Baby, Rocket, GraduationCap, Shapes } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 export const Categories = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#pasek-kategorii') {
+            const element = document.getElementById('pasek-kategorii');
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     const categories = [
         { name: '0-2 LATA', icon: <Baby className="w-10 h-10" />, path: '/sklep/kategoria/0-2' },
         { name: '3-5 LAT', icon: <Rocket className="w-10 h-10" />, path: '/sklep/kategoria/3-5' },
@@ -9,7 +24,7 @@ export const Categories = () => {
     ];
 
     return (
-        <section className="py-16 bg-white">
+        <section id="pasek-kategorii" className="py-16 bg-white scroll-mt-24">
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl font-black mb-10 tracking-tight">POLECANE KATEGORIE</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

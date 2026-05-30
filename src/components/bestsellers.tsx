@@ -3,6 +3,7 @@ import { ShoppingCart, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom'; 
 import { useCart } from '../contexts/CartContext';
 import type { Product } from '../types';
+import { useLocation } from 'react-router-dom';
 
 export const Bestsellers = () => {
     const { addToCart } = useCart();
@@ -36,8 +37,21 @@ export const Bestsellers = () => {
         fetchBestsellers();
     }, []);
 
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#bestsellery') {
+            const element = document.getElementById('bestsellery');
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50" id="bestsellery" scroll-mt-24>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-black text-gray-900 mb-4">NASZE BESTSELLERY</h2>

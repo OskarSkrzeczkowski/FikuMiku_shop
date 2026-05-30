@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db';
 import authRoutes from './routes/auth';
 import productRoutes from './routes/products';
+import userRoutes from './routes/user';
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.get('/api/health', (req, res) => {
 });
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/user', userRoutes);
 app.listen(PORT, () => {
     console.log(` Serwer śmiga na porcie http://localhost:${PORT}`);
 });

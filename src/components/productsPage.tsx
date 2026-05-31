@@ -51,7 +51,6 @@ export const ProductsPage = () => {
         );
     }
 
-    // 4. Filtrowanie prawdziwych danych
     const filteredProducts = products.filter(product => {
         if (type === 'kategoria') return product.category === value;
         if (type === 'nowosc') return product.tag === value;
@@ -72,7 +71,6 @@ export const ProductsPage = () => {
                 {filteredProducts.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {filteredProducts.map((product) => {
-                            // ZMIANA: Szukamy w ulubionych po _id
                             const isFav = isFavorite(product._id); 
 
                             return (

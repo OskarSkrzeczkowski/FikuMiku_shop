@@ -36,7 +36,6 @@ export const HeaderTop = () => {
     }, []);
 
     useEffect(() => {
-
         if (searchTerm.trim().length < 2) {
             setSuggestions([]);
             setShowSuggestions(false);
@@ -243,9 +242,13 @@ export const HeaderTop = () => {
                     <div className="flex items-center gap-5 text-[11px] font-bold tracking-wide">
                         {user ? (
                             <div className="flex items-center gap-4">
-                                <span className="text-orange-200 font-black uppercase tracking-wider">
+                                <Link 
+                                    to="/zamowienia" 
+                                    className="text-orange-200 font-black uppercase tracking-wider hover:text-orange-100 hover:underline transition"
+                                    title="Zobacz historię zamówień"
+                                >
                                     Cześć, {user.email.split('@')[0]}!
-                                </span>
+                                </Link>
                                 <button onClick={handleLogout} className="flex flex-col items-center hover:text-orange-200 transition cursor-pointer">
                                     <LogOut className="w-5 h-5 mb-0.5" />
                                     <span>Wyloguj</span>

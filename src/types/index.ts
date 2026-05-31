@@ -19,3 +19,21 @@ export interface User {
     email: string;
 
 }
+export interface ShippingDetails {
+    fullName: string;
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    postalCode: string;
+    deliveryMethod: 'courier' | 'parcel_locker' | 'pickup';
+}
+
+export interface Order {
+    _id?: string;
+    customer: ShippingDetails;
+    items: CartItem[];
+    totalPrice: number;
+    createdAt: string;
+    status: 'pending' | 'processing' | 'completed';
+}

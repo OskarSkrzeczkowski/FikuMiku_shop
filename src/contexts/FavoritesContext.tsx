@@ -36,7 +36,7 @@ export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         const fetchFavorites = async () => {
             const token = localStorage.getItem('fiku_miku_token'); 
-            if (!token) return; // Jeśli użytkownik nie jest zalogowany
+            if (!token) return; 
 
             try {
                 const response = await fetch('http://localhost:5000/api/user/favorites', {

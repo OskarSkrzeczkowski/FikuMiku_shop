@@ -85,7 +85,6 @@ export const ProductPage = () => {
             <div className="aspect-square bg-slate-100 rounded-3xl overflow-hidden border-2 border-slate-50 shadow-inner">
               <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
             </div>
-            {/* Opcjonalne miniatury - zostawiam na przyszłość */}
             <div className="grid grid-cols-4 gap-4">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="aspect-square bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-blue-400 transition shadow-sm overflow-hidden">

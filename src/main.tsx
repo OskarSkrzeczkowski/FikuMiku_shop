@@ -17,6 +17,7 @@ import { CartProvider } from './contexts/CartContext';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { FavoritesProvider } from './contexts/FavoritesContext';
 import { SearchPage } from './navComponents/searchPage';
+import { OrdersHistoryPage } from './components/OrdersHistoryPage';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -50,6 +51,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="polityka" element={<PrivacyPolicy />} />
 
           <Route path="/szukaj" element={<SearchPage />} />
+
+          <Route path="zamowienia" element={<OrdersHistoryPage />} />
         
           <Route path="*" element={<div className="py-20 text-center">Element strony w trakcie prac</div>} />
   
